@@ -1,0 +1,70 @@
+@import "_root";
+
+.Login {
+  height: 100vh;
+  background-image: url("../../images/gold2.jpg");
+  background-color: rgb(112, 112, 112);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  .container {
+    height: 80vh;
+    color: white;
+    display: grid;
+    place-items: center;
+  }
+
+  .login-container {
+    width: 400px;
+    height: 400px;
+    padding: 1rem;
+    border-radius: 5px;
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+
+  .username,
+  .password {
+    width: 100%;
+    margin: 50px 0;
+
+    input {
+      width: 260px;
+      padding: 5px;
+      margin-left: 10px;
+      border: 2px solid var(--clr-background);
+      border-radius: 5px;
+    }
+  }
+
+  .brand {
+    h1 {
+      color: var(--clr-grey) !important;
+    }
+  }
+
+  .submit-btn {
+    padding: 20px 0;
+    button {
+      display: block;
+      margin-inline: auto;
+      color: var(--clr-grey);
+      padding: 0.6rem 1.75rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      font-family: var(--ff-hind);
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+      background: transparent;
+      border: 2px solid var(--clr-grey);
+      transition: background 500ms ease, border 500ms ease, color 500ms ease;
+    }
+
+    button:hover {
+      background: var(--clr-grey);
+      border: 2px solid black;
+      color: black;
+    }
+  }
+}

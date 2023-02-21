@@ -1,0 +1,21 @@
+footer {
+    .brand {
+        background: var(--clr-background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        height: 150px;
+
+        img {
+            object-fit: cover;
+            width: auto;
+            height: 80px;
+        }
+
+        h1 {
+            color: var(--clr-golden) !important;
+        }
+    }
+}

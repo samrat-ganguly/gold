@@ -1,0 +1,11 @@
+.brand {
+    height: fit-content;
+    background: transparent;
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        color: var(--clr-background);
+    }
+}

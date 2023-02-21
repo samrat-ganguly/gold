@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+:root {
+  /* dark shades of primary color*/
+  --clr-background: rgb(33, 37, 43, 200);
+  --clr-background2: rgba(51, 56, 66, 255);
+  --clr-blue-1: hsl(205, 86%, 17%);
+  --clr-blue-2: hsl(199, 100%, 17%);
+  --clr-white: rgb(255, 255, 255);
+  --clr-grey: rgba(230, 230, 230, 155);
+  --clr-golden: rgb(203, 169, 123);
+  --ff-hind: "Hind", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-hind);
+  min-height: 100vh;
+  background: var(--clr-grey);
+  color: var(--clr-grey) !important;
+}
+body input {
+  border: 0;
+}
+body input,
+body textarea {
+  background: var(--clr-grey);
+  font-family: var(--ff-hind);
+}
+body textarea {
+  border-radius: 1rem;
+}
+body hr {
+  font-weight: 900;
+  margin: 1rem 0;
+}
+
+.top {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.top .name,
+.top .order {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--clr-background);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
+.top .name {
+  padding-top: 2rem;
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+.top .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.top .row label {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--clr-grey) !important;
+}
+.top h1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 1rem;
+}
+.top input {
+  margin: none;
+  outline: none;
+  border-bottom: 2px solid var(--clr-grey);
+  color: var(--clr-grey);
+  background: transparent;
+  width: 100%;
+  height: 2rem;
+}
+.top textarea {
+  padding: 20px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.top ::-moz-placeholder {
+  text-align: left;
+  text-transform: uppercase;
+}
+.top ::placeholder {
+  text-align: left;
+  text-transform: uppercase;
+}
+.top .row:first-child {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.top .row:nth-child(2) {
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+.top .row:nth-child(3) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.top .row:nth-child(4) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.top .row:nth-child(5) {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.top .order {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .top {
+    display: flex;
+    flex-direction: column-reverse !important;
+  }
+  .top .order {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (max-width: 600px) {
+  .name {
+    grid-template-rows: repeat(6, 1fr) !important;
+    grid-template-columns: 1fr !important;
+  }
+  .name .row:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .name .row:nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .name .row:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .name .row:nth-child(4) {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  .name .row:nth-child(5) {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+}
+.middle {
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+}
+.middle .together,
+.middle .desc {
+  background: var(--clr-background);
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 21rem !important;
+  min-width: 345px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.middle .together textarea,
+.middle .together input,
+.middle .desc textarea,
+.middle .desc input {
+  text-align: center;
+  border-radius: 1rem;
+}
+.middle .together {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.middle .desc {
+  overflow-y: auto;
+}
+.middle .desc textarea {
+  max-width: 85% !important;
+  min-height: 20% !important;
+}
+.middle p {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.middle textarea,
+.middle input {
+  height: 24%;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+.middle ::-moz-placeholder {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.middle ::placeholder {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.middle input {
+  margin-bottom: 10px;
+}
+.middle select {
+  width: 12% !important;
+  height: 19%;
+  font-size: 1rem;
+  border-radius: 1rem;
+  background: var(--clr-grey);
+  margin-left: 10px !important;
+  transform: translateY(-25px);
+  text-align: center;
+}
+
+.middle-btn,
+.submit-btn {
+  padding: 20px 0;
+}
+.middle-btn button,
+.submit-btn button {
+  display: block;
+  margin-inline: auto;
+  height: 25%;
+  padding: 0.6rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-family: var(--ff-hind);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  background: transparent;
+  transition: background 500ms ease, color 500ms ease;
+}
+.middle-btn button:hover,
+.submit-btn button:hover {
+  background: var(--clr-background);
+  color: var(--clr-grey);
+}
+
+.charges {
+  padding: 1rem 0;
+  color: var(--clr-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.charges input {
+  padding: 0.6rem 1.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--clr-background);
+  border-radius: 0.5rem;
+  font-family: var(--ff-hind);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  background: transparent;
+  text-align: center;
+}
+.charges ::-moz-placeholder {
+  text-align: center;
+}
+.charges ::placeholder {
+  text-align: center;
+}
+
+.bottom {
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+.bottom .calculate {
+  border-radius: 1rem;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  background: var(--clr-background);
+  padding: 1rem 2rem;
+  width: 400px;
+}
+.bottom .calculate {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+.bottom .calculate label {
+  text-align: center;
+  text-transform: uppercase;
+  margin-block: auto;
+  color: var(--clr-grey) !important;
+}
+.bottom .calculate input {
+  text-align: center;
+  border-radius: 10px;
+  height: 50px;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=style.css.map */

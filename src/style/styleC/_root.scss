@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+  /* dark shades of primary color*/
+  --clr-background: rgb(33, 37, 43, 200);
+  --clr-background2: rgba(51, 56, 66, 255);
+
+  --clr-blue-1: hsl(205, 86%, 17%);
+  --clr-blue-2: hsl(199, 100%, 17%);
+
+  --clr-white: rgb(255, 255, 255);
+
+  --clr-grey: rgba(230, 230, 230, 155);
+
+  --clr-golden: rgb(203, 169, 123);
+
+  --ff-hind: "Hind", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-hind);
+  min-height: 100vh;
+  background: var(--clr-grey);
+
+  input {
+    border: 0;
+  }
+
+  textarea {
+    border-radius: 1rem;
+  }
+
+  hr {
+    font-weight: 900;
+    margin: 1rem 0;
+  }
+  button {
+    cursor: pointer;
+  }
+}

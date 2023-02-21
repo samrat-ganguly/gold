@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+:root {
+  /* dark shades of primary color*/
+  --clr-background: rgb(33, 37, 43, 200);
+  --clr-background2: rgba(51, 56, 66, 255);
+  --clr-blue-1: hsl(205, 86%, 17%);
+  --clr-blue-2: hsl(199, 100%, 17%);
+  --clr-white: rgb(255, 255, 255);
+  --clr-grey: rgba(230, 230, 230, 155);
+  --clr-golden: rgb(203, 169, 123);
+  --ff-hind: "Hind", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-hind);
+  min-height: 100vh;
+  background: var(--clr-grey);
+}
+
+.Login {
+  height: 100vh;
+  background-image: url("../../images/gold2.jpg");
+  background-color: rgb(112, 112, 112);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+}
+.Login .container {
+  height: 80vh;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.Login .login-container {
+  width: 400px;
+  height: 400px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.Login .login-container h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+.Login .username,
+.Login .password {
+  width: 100%;
+  margin: 50px 0;
+}
+.Login .username input,
+.Login .password input {
+  width: 260px;
+  padding: 5px;
+  margin-left: 10px;
+  border: 2px solid var(--clr-background);
+  border-radius: 5px;
+}
+.Login .brand h1 {
+  color: var(--clr-grey) !important;
+}
+.Login .submit-btn {
+  padding: 20px 0;
+}
+.Login .submit-btn button {
+  display: block;
+  margin-inline: auto;
+  color: var(--clr-grey);
+  padding: 0.6rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-family: var(--ff-hind);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: 2px solid var(--clr-grey);
+  transition: background 500ms ease, border 500ms ease, color 500ms ease;
+}
+.Login .submit-btn button:hover {
+  background: var(--clr-grey);
+  border: 2px solid black;
+  color: black;
+}/*# sourceMappingURL=login.css.map */

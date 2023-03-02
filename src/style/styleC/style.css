@@ -31,6 +31,7 @@ body {
   font-family: var(--ff-hind);
   min-height: 100vh;
   background: var(--clr-grey);
+  color: var(--clr-blue-1);
 }
 body input {
   border: 0;

@@ -7,8 +7,7 @@ footer .brand {
   height: 150px;
 }
 footer .brand img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: auto;
   height: 80px;
 }

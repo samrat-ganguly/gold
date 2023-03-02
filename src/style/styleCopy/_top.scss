@@ -1,11 +1,10 @@
-.order {
+.direct_sale_copy {
   .top {
     height: fit-content;
     padding: 0.5rem 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-
     .name,
     .order {
       border-radius: 1rem;
@@ -32,6 +31,7 @@
       label {
         text-transform: uppercase;
         font-weight: 800;
+        color: var(--clr-grey) !important;
       }
     }
 
@@ -98,7 +98,6 @@
     .top {
       display: flex;
       flex-direction: column-reverse !important;
-
       .order {
         height: fit-content;
       }

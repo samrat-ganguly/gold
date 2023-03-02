@@ -72,8 +72,7 @@ body button {
 .change_rate img {
   width: 20px;
   height: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .change_rate .center {
   height: 80vh;
@@ -112,7 +111,6 @@ body button {
 .change_rate .submit-btn button {
   display: block;
   margin-inline: auto;
-  height: -moz-fit-content;
   height: fit-content;
   padding: 0.6rem 1.75rem;
   font-size: 1rem;

@@ -1,37 +1,26 @@
 .middle {
   padding: 0.5rem 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  place-items: center;
   overflow-x: auto;
-
-  .together,
   .desc {
-    background: var(--clr-background);
-    border-radius: 1rem;
     padding: 1rem;
-    height: 21rem !important;
+    height: 80px;
+    width: fit-content;
     min-width: 345px;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
-
-    textarea,
-    input {
-      text-align: center;
-      border-radius: 1rem;
-    }
+    gap: 20px;
+    border-bottom: 1px dashed var(--clr-background3);
   }
-
-  .together {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
   .desc {
-    overflow-y: auto;
-    textarea {
-      max-width: 85% !important;
-      min-height: 20% !important;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    .i1 {
+      max-width: 600px !important;
+      width: 20rem !important;
+      min-width: 400px !important;
     }
   }
 
@@ -41,33 +30,25 @@
     margin-bottom: 20px;
   }
 
-  textarea,
-  input {
-    height: 24%;
+  input,
+  select,
+  button {
+    text-align: center;
+    height: 100%;
     width: 100%;
     padding: 10px;
     font-size: 1rem;
+    width: 150px;
+    border-radius: 0.5rem;
+    border: 1px solid var(--clr-background3);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    background: transparent;
   }
 
   ::placeholder {
     font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
-  }
-  input {
-    margin-bottom: 10px;
-  }
-
-  select {
-    width: 12% !important;
-    height: 19%;
-    // padding: 10px;
-    font-size: 1rem;
-    border-radius: 1rem;
-    background: var(--clr-grey);
-    margin-left: 10px !important;
-    transform: translateY(-25px);
-    text-align: center;
   }
 }
 
@@ -83,7 +64,7 @@
     font-size: 1rem;
     border-radius: 0.5rem;
     font-family: var(--ff-hind);
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
     background: transparent;
     transition: background 500ms ease, color 500ms ease;
   }
@@ -98,11 +79,12 @@
   padding: 1rem 0;
   color: var(--clr-background);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   input {
-    padding: 0.6rem 1.75rem;
+    padding: 0.6rem 1.25rem;
     font-size: 1rem;
     border: 1px solid var(--clr-background);
     border-radius: 0.5rem;
@@ -114,4 +96,19 @@
   ::placeholder {
     text-align: center;
   }
+}
+
+.add_row > button {
+  display: block;
+  margin-inline: auto;
+  text-align: center;
+  height: 100%;
+  width: 150px !important;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 0.6rem 1.25rem;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  background: transparent;
 }

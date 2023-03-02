@@ -1,4 +1,4 @@
-import "../../style/styleA/style.css";
+import "../../style/styleCopy/style.css";
 import Header from "../../components/header/header";
 import dayjs from "dayjs";
 import { useState, useRef, useContext, useEffect } from "react";
@@ -6,7 +6,7 @@ import AuthContext from "../../context/AuthContext";
 import useAxios from "../../utils/useAxios";
 // import { env } from "../../utils/env";
 
-const LayoutA = () => {
+const LayoutCopy = () => {
   // const { user } = useContext(AuthContext);
   const customAxios = useAxios();
   const [goldrate, setGoldrate] = useState(0);
@@ -194,7 +194,7 @@ const LayoutA = () => {
   };
 
   return (
-    <div className="direct_sale">
+    <div className="direct_sale_copy">
       <Header />
       <hr></hr>
 
@@ -470,4 +470,4 @@ const LayoutA = () => {
   );
 };
 
-export default LayoutA;
+export default LayoutCopy;

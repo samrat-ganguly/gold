@@ -50,22 +50,22 @@ body hr {
   margin: 1rem 0;
 }
 
-.top {
+.direct_sale_copy .top {
   height: fit-content;
   padding: 0.5rem 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
-.top .name,
-.top .order {
+.direct_sale_copy .top .name,
+.direct_sale_copy .top .order {
   border-radius: 1rem;
   padding: 1rem;
   background: var(--clr-background3);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
 }
-.top .name {
+.direct_sale_copy .top .name {
   padding-top: 2rem;
   grid-column: span 3;
   display: grid;
@@ -73,21 +73,21 @@ body hr {
   grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
 }
-.top .row {
+.direct_sale_copy .top .row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-.top .row label {
+.direct_sale_copy .top .row label {
   text-transform: uppercase;
   font-weight: 800;
   color: var(--clr-grey) !important;
 }
-.top h1 {
+.direct_sale_copy .top h1 {
   width: fit-content;
   padding-left: 1rem;
 }
-.top input {
+.direct_sale_copy .top input {
   margin: none;
   outline: none;
   border-bottom: 2px solid var(--clr-grey);
@@ -96,84 +96,84 @@ body hr {
   width: 100%;
   height: 2rem;
 }
-.top textarea {
+.direct_sale_copy .top textarea {
   padding: 20px;
   margin-left: 10px;
   font-size: 15px;
 }
-.top ::placeholder {
+.direct_sale_copy .top ::placeholder {
   text-align: left;
   text-transform: uppercase;
 }
-.top .row:first-child {
+.direct_sale_copy .top .row:first-child {
   grid-column: 1/2;
   grid-row: 1/2;
 }
-.top .row:nth-child(2) {
+.direct_sale_copy .top .row:nth-child(2) {
   grid-column: 1/2;
   grid-row: 2/4;
 }
-.top .row:nth-child(3) {
+.direct_sale_copy .top .row:nth-child(3) {
   grid-column: 2/3;
   grid-row: 1/2;
 }
-.top .row:nth-child(4) {
+.direct_sale_copy .top .row:nth-child(4) {
   grid-column: 2/3;
   grid-row: 2/3;
 }
-.top .row:nth-child(5) {
+.direct_sale_copy .top .row:nth-child(5) {
   grid-column: 2/3;
   grid-row: 3/4;
 }
-.top .order {
+.direct_sale_copy .top .order {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   justify-content: center;
 }
-
 @media (max-width: 767px) {
-  .top {
+  .direct_sale_copy .top {
     display: flex;
     flex-direction: column-reverse !important;
   }
-  .top .order {
+  .direct_sale_copy .top .order {
     height: fit-content;
   }
 }
 @media (max-width: 600px) {
-  .name {
+  .direct_sale_copy .name {
     grid-template-rows: repeat(6, 1fr) !important;
     grid-template-columns: 1fr !important;
   }
-  .name .row:first-child {
+  .direct_sale_copy .name .row:first-child {
     grid-column: 1/2;
     grid-row: 1/2;
   }
-  .name .row:nth-child(2) {
+  .direct_sale_copy .name .row:nth-child(2) {
     grid-column: 1/2;
     grid-row: 2/4;
   }
-  .name .row:nth-child(3) {
+  .direct_sale_copy .name .row:nth-child(3) {
     grid-column: 1/2;
     grid-row: 4/5;
   }
-  .name .row:nth-child(4) {
+  .direct_sale_copy .name .row:nth-child(4) {
     grid-column: 1/2;
     grid-row: 5/6;
   }
-  .name .row:nth-child(5) {
+  .direct_sale_copy .name .row:nth-child(5) {
     grid-column: 1/2;
     grid-row: 6/7;
   }
 }
-.middle {
+
+.direct_sale_copy .middle {
   padding: 0.5rem 2rem;
   display: grid;
   place-items: center;
   overflow-x: auto;
 }
-.middle .desc {
+.direct_sale_copy .middle .desc {
   padding: 1rem;
   height: 80px;
   width: fit-content;
@@ -181,25 +181,25 @@ body hr {
   gap: 20px;
   border-bottom: 1px dashed var(--clr-background3);
 }
-.middle .desc {
+.direct_sale_copy .middle .desc {
   overflow-x: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
 }
-.middle .desc .i1 {
+.direct_sale_copy .middle .desc .i1 {
   max-width: 600px !important;
   width: 20rem !important;
   min-width: 400px !important;
 }
-.middle p {
+.direct_sale_copy .middle p {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-.middle input,
-.middle select,
-.middle button {
+.direct_sale_copy .middle input,
+.direct_sale_copy .middle select,
+.direct_sale_copy .middle button {
   text-align: center;
   height: 100%;
   width: 100%;
@@ -211,18 +211,17 @@ body hr {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   background: transparent;
 }
-.middle ::placeholder {
+.direct_sale_copy .middle ::placeholder {
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
 }
-
-.middle-btn,
-.submit-btn {
+.direct_sale_copy .middle-btn,
+.direct_sale_copy .submit-btn {
   padding: 20px 0;
 }
-.middle-btn button,
-.submit-btn button {
+.direct_sale_copy .middle-btn button,
+.direct_sale_copy .submit-btn button {
   display: block;
   margin-inline: auto;
   height: 25%;
@@ -234,13 +233,12 @@ body hr {
   background: transparent;
   transition: background 500ms ease, color 500ms ease;
 }
-.middle-btn button:hover,
-.submit-btn button:hover {
+.direct_sale_copy .middle-btn button:hover,
+.direct_sale_copy .submit-btn button:hover {
   background: var(--clr-background);
   color: var(--clr-grey);
 }
-
-.charges {
+.direct_sale_copy .charges {
   padding: 1rem 0;
   color: var(--clr-background);
   display: flex;
@@ -249,7 +247,7 @@ body hr {
   align-items: center;
   gap: 20px;
 }
-.charges input {
+.direct_sale_copy .charges input {
   padding: 0.6rem 1.25rem;
   font-size: 1rem;
   border: 1px solid var(--clr-background);
@@ -259,11 +257,10 @@ body hr {
   background: transparent;
   text-align: center;
 }
-.charges ::placeholder {
+.direct_sale_copy .charges ::placeholder {
   text-align: center;
 }
-
-.add_row > button {
+.direct_sale_copy .add_row > button {
   display: block;
   margin-inline: auto;
   text-align: center;
@@ -278,30 +275,30 @@ body hr {
   background: transparent;
 }
 
-.bottom {
+.direct_sale_copy .bottom {
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: center;
 }
-.bottom .calculate {
+.direct_sale_copy .bottom .calculate {
   border-radius: 1rem;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
   background: var(--clr-background);
   padding: 1rem 2rem;
   width: 400px;
 }
-.bottom .calculate {
+.direct_sale_copy .bottom .calculate {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 }
-.bottom .calculate label {
+.direct_sale_copy .bottom .calculate label {
   text-align: center;
   text-transform: uppercase;
   margin-block: auto;
   color: var(--clr-grey) !important;
 }
-.bottom .calculate input {
+.direct_sale_copy .bottom .calculate input {
   text-align: center;
   border-radius: 10px;
   height: 50px;

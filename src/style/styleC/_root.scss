@@ -37,6 +37,7 @@ body {
   font-family: var(--ff-hind);
   min-height: 100vh;
   background: var(--clr-grey);
+  color: var(--clr-blue-1);
 
   input {
     border: 0;
@@ -50,6 +51,7 @@ body {
     font-weight: 900;
     margin: 1rem 0;
   }
+
   button {
     cursor: pointer;
   }

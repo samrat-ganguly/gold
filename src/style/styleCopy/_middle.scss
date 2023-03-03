@@ -80,18 +80,27 @@
     padding: 1rem 0;
     color: var(--clr-background);
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     input {
-      padding: 0.6rem 1.25rem;
       font-size: 1rem;
       border: 1px solid var(--clr-background);
       border-radius: 0.5rem;
       font-family: var(--ff-hind);
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
       background: transparent;
+      text-align: center;
+    }
+
+    input,
+    label {
+      padding: 5px;
+      width: 180px;
+      height: 45px;
+    }
+    label {
       text-align: center;
     }
     ::placeholder {
@@ -112,5 +121,7 @@
     padding: 0.6rem 1.25rem;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
     background: transparent;
+    border: 1px solid var(--clr-background);
+    margin-bottom: 50px;
   }
 }

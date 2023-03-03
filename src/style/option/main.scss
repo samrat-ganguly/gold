@@ -1,0 +1,49 @@
+@import "_root";
+
+.option-page {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  .buttons {
+    button {
+      text-align: center;
+      padding: 5px;
+      width: 200px;
+      height: 50px;
+      text-transform: uppercase;
+      display: block;
+      margin-inline: auto;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+      outline: none;
+      border: 1px solid var(--clr-background);
+    }
+  }
+  input {
+    border: 1px solid var(--clr-background);
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    display: block;
+    margin-inline: auto;
+    margin-bottom: 30px;
+  }
+  table {
+    color: black;
+    border-collapse: collapse;
+    td,
+    th {
+      border: 1px solid var(--clr-background);
+      border: 1px solid var(--clr-background);
+      padding: 5px;
+      width: 200px;
+      height: 50px;
+      text-align: center;
+    }
+    th {
+      text-transform: uppercase;
+    }
+  }
+}

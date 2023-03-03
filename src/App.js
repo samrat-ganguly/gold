@@ -1,4 +1,5 @@
 import Login from "./page/login/login";
+import Option from "./page/option/option";
 import LayoutA from "./page/layoutA/layoutA";
 import LayoutB from "./page/layoutB/layoutB";
 import LayoutC from "./page/layoutC/layoutC";
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/b" element={<LayoutB />} />
         <Route path="/c" element={<LayoutC />} />
         <Route path="/l" element={<Login />} />
+        <Route path="/o" element={<Option />} />
         <Route path="/copy" element={<LayoutCopy />} />
       </Routes>
     </AuthProvider>

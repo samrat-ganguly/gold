@@ -205,6 +205,7 @@ const LayoutA = () => {
               <label>Name : </label>
               <input
                 type="text"
+                placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -217,6 +218,7 @@ const LayoutA = () => {
                 name="Address"
                 rows="4"
                 cols="35"
+                placeholder="Address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
@@ -226,6 +228,7 @@ const LayoutA = () => {
               <label>Phone : </label>
               <input
                 type="number"
+                placeholder="Phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
@@ -235,6 +238,7 @@ const LayoutA = () => {
               <label>DOB : </label>
               <input
                 type="date"
+                placeholder="DOB"
                 max={dayjs().format("YYYY-MM-DD")}
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
@@ -245,6 +249,7 @@ const LayoutA = () => {
               <label>DOA:</label>
               <input
                 type="date"
+                placeholder="DOA"
                 max={dayjs().format("YYYY-MM-DD")}
                 value={doa}
                 onChange={(e) => setDoa(e.target.value)}
@@ -256,6 +261,7 @@ const LayoutA = () => {
             <label>Order Date : </label>
             <input
               type="date"
+              placeholder="Order Date"
               disabled={true}
               defaultValue={dayjs().format("YYYY-MM-DD")}
             />
@@ -263,6 +269,7 @@ const LayoutA = () => {
             <label>Purity : </label>
             <input
               type="text"
+              placeholder="Purity"
               value={purity}
               onChange={(e) => setPurity(e.target.value)}
             />
@@ -353,14 +360,14 @@ const LayoutA = () => {
           />
         </div>
         <div className="charges">
-          <label>HallMark Charge</label>
+          <label>HallMark Charge : </label>
           <input
             value={hallmark}
             onChange={(e) => setHallmark(e.target.value)}
           />
         </div>
         <div className="charges">
-          <label>Processing Charge</label>
+          <label>Processing Charge : </label>
           <input value={making} onChange={(e) => setMaking(e.target.value)} />
         </div>
         <div className="middle-btn">

@@ -169,7 +169,7 @@ const LayoutB = () => {
 
             <div className="row">
               <label>DOA:</label>
-              <input type="date" placeholder="DOB" />
+              <input type="date" placeholder="DOA" />
             </div>
           </div>
 

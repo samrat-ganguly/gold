@@ -52,6 +52,11 @@ body button {
   place-items: center;
   height: 100vh;
 }
+.option-page p {
+  width: 100%;
+  text-align: center;
+  color: red;
+}
 .option-page .buttons button {
   text-align: center;
   padding: 5px;
@@ -91,4 +96,8 @@ body button {
 }
 .option-page table th {
   text-transform: uppercase;
+}
+
+header {
+  border-bottom: 2px solid black;
 }/*# sourceMappingURL=main.css.map */

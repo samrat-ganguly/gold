@@ -29,6 +29,10 @@
     object-fit: cover;
   }
 
+  label {
+    color: black;
+  }
+
   .center {
     height: 80vh;
     display: grid;
@@ -53,9 +57,11 @@
     .place {
       display: flex;
       gap: 5px;
+
       input {
         flex: 1;
       }
+
       button {
         outline: none;
         border: none;

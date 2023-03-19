@@ -4,6 +4,13 @@
   display: grid;
   place-items: center;
   height: 100vh;
+
+  p {
+    width: 100%;
+    text-align: center;
+    color: red;
+  }
+
   .buttons {
     button {
       text-align: center;
@@ -20,6 +27,7 @@
       border: 1px solid var(--clr-background);
     }
   }
+
   input {
     border: 1px solid var(--clr-background);
     padding: 5px;
@@ -30,9 +38,11 @@
     margin-inline: auto;
     margin-bottom: 30px;
   }
+
   table {
     color: black;
     border-collapse: collapse;
+
     td,
     th {
       border: 1px solid var(--clr-background);
@@ -42,8 +52,13 @@
       height: 50px;
       text-align: center;
     }
+
     th {
       text-transform: uppercase;
     }
   }
+}
+
+header {
+  border-bottom: 2px solid black;
 }

@@ -7,6 +7,7 @@
   background-blend-mode: multiply;
   background-position: center;
   background-size: cover;
+
   .container {
     height: 80vh;
     color: white;
@@ -19,6 +20,7 @@
     height: 400px;
     padding: 1rem;
     border-radius: 5px;
+
     h1 {
       text-align: center;
       margin: 20px 0;
@@ -29,6 +31,8 @@
   .password {
     width: 100%;
     margin: 50px 0;
+    display: flex;
+    align-items: center;
 
     input {
       width: 260px;
@@ -47,6 +51,7 @@
 
   .submit-btn {
     padding: 20px 0;
+
     button {
       display: block;
       margin-inline: auto;

@@ -7,14 +7,11 @@ import useAxios from "../../utils/useAxios";
 // import { env } from "../../utils/env";
 
 const LayoutA = () => {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const customAxios = useAxios();
   const [goldrate, setGoldrate] = useState(0);
   const [silverrate, setSilverrate] = useState(0);
   const [making, setMaking] = useState(0);
-  const user = {
-    user_id: 1,
-  };
   useEffect(() => {
     const getValues = async () => {
       const res = await customAxios.get("/constants");
@@ -33,6 +30,7 @@ const LayoutA = () => {
   const [phone, setPhone] = useState("");
   const [dob, setDob] = useState(null);
   const [doa, setDoa] = useState(null);
+  const [invoice, setInvoice] = useState(dayjs().format("YYYY-MM-DD"));
   const [purity, setPurity] = useState(916);
 
   //Item related
@@ -83,9 +81,9 @@ const LayoutA = () => {
     const newRows = [...rows];
     newRows[index].ntwt = value;
     if (newRows[index].type === "Gold") {
-      newRows[index].amt = value * goldrate;
+      newRows[index].amt = (value * goldrate).toFixed(2);
     } else if (newRows[index].type === "Silver") {
-      newRows[index].amt = value * silverrate;
+      newRows[index].amt = (value * silverrate).toFixed(2);
     } else {
       alert("!Please select type before changing net quantity!");
       newRows[index].ntwt = 0;
@@ -115,7 +113,8 @@ const LayoutA = () => {
       .post("/bill/post", {
         items: temp_row,
         bill_no: "",
-        doo: dayjs().format("YYYY-MM-DD"),
+        invoice_date: invoice,
+        doo: null,
         purity: purity,
         name: name,
         phone_no: phone,
@@ -132,6 +131,11 @@ const LayoutA = () => {
         gst: gst,
         hallmark: hallmark,
         net_amount: amount,
+        old_gold_wt: 0,
+        old_silver_wt: 0,
+        advance: 0,
+        refund: 0,
+        sold: true,
         owner: user.user_id,
       })
       .catch((err) => {
@@ -177,25 +181,27 @@ const LayoutA = () => {
         parseFloat(temppro) +
         parseFloat(otherchargeprice))
     ).toFixed(2);
-    setTotalgold(tempgold);
-    setTotalsilver(tempsilver);
+    setTotalgold(tempgold.toFixed(2));
+    setTotalsilver(tempsilver.toFixed(2));
     setGoldvalue(tempgoldvalue);
     setSilvervalue(tempsilvervalue);
     setProcessing(temppro);
     setGst(tempgst);
     setAmount(
-      parseFloat(tempgoldvalue) +
+      (
+        parseFloat(tempgoldvalue) +
         parseFloat(tempsilvervalue) +
         parseFloat(temppro) +
         2 * parseFloat(tempgst) +
         parseFloat(hallmark) +
         parseFloat(otherchargeprice)
+      ).toFixed(2)
     );
   };
 
   return (
     <div className="direct_sale">
-      <Header />
+      <Header text={"Invoice Page"} />
       <hr></hr>
 
       <section>
@@ -205,7 +211,6 @@ const LayoutA = () => {
               <label>Name : </label>
               <input
                 type="text"
-                placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -218,17 +223,15 @@ const LayoutA = () => {
                 name="Address"
                 rows="4"
                 cols="35"
-                placeholder="Address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
             </div>
 
             <div className="row">
-              <label>Phone : </label>
+              <label>Phone No: </label>
               <input
                 type="number"
-                placeholder="Phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
@@ -258,12 +261,12 @@ const LayoutA = () => {
           </div>
 
           <div className="order">
-            <label>Order Date : </label>
+            <label>Invoice Date : </label>
             <input
               type="date"
               placeholder="Order Date"
-              disabled={true}
-              defaultValue={dayjs().format("YYYY-MM-DD")}
+              value={invoice}
+              onChange={(e) => setInvoice(e.target.value)}
             />
 
             <label>Purity : </label>

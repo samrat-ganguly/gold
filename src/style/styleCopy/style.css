@@ -51,6 +51,7 @@ body hr {
 }
 
 .direct_sale_copy .top {
+  height: -moz-fit-content;
   height: fit-content;
   padding: 0.5rem 2rem;
   display: grid;
@@ -84,6 +85,7 @@ body hr {
   color: var(--clr-grey) !important;
 }
 .direct_sale_copy .top h1 {
+  width: -moz-fit-content;
   width: fit-content;
   padding-left: 1rem;
 }
@@ -100,6 +102,10 @@ body hr {
   padding: 20px;
   margin-left: 10px;
   font-size: 15px;
+}
+.direct_sale_copy .top ::-moz-placeholder {
+  text-align: left;
+  text-transform: uppercase;
 }
 .direct_sale_copy .top ::placeholder {
   text-align: left;
@@ -137,6 +143,7 @@ body hr {
     flex-direction: column-reverse !important;
   }
   .direct_sale_copy .top .order {
+    height: -moz-fit-content;
     height: fit-content;
   }
 }
@@ -176,6 +183,7 @@ body hr {
 .direct_sale_copy .middle .desc {
   padding: 1rem;
   height: 80px;
+  width: -moz-fit-content;
   width: fit-content;
   min-width: 345px;
   gap: 20px;
@@ -210,6 +218,11 @@ body hr {
   border: 1px solid var(--clr-background3);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   background: transparent;
+}
+.direct_sale_copy .middle ::-moz-placeholder {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 .direct_sale_copy .middle ::placeholder {
   font-size: 1rem;
@@ -264,6 +277,9 @@ body hr {
 .direct_sale_copy .charges label {
   text-align: center;
 }
+.direct_sale_copy .charges ::-moz-placeholder {
+  text-align: center;
+}
 .direct_sale_copy .charges ::placeholder {
   text-align: center;
 }
@@ -310,6 +326,6 @@ body hr {
 .direct_sale_copy .bottom .calculate input {
   text-align: center;
   border-radius: 10px;
-  height: 50px;
+  height: 40px;
   margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */

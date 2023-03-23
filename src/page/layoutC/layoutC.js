@@ -91,7 +91,7 @@ const LayoutC = () => {
 
   return (
     <div className="change_rate">
-      <Header />
+      <Header text={"Rates"} />
 
       <hr></hr>
 

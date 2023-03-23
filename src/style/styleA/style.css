@@ -51,12 +51,17 @@ body hr {
 }
 
 .top {
+  height: -moz-fit-content;
   height: fit-content;
   padding: 0.5rem 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   width: 100%;
+}
+.top ::-moz-placeholder {
+  text-align: left;
+  text-transform: uppercase;
 }
 .top ::placeholder {
   text-align: left;
@@ -85,10 +90,10 @@ body hr {
 }
 .top .row label {
   text-transform: uppercase;
-  font-weight: 800;
   color: var(--clr-grey) !important;
 }
 .top h1 {
+  width: -moz-fit-content;
   width: fit-content;
   padding-left: 1rem;
 }
@@ -105,6 +110,10 @@ body hr {
   padding: 20px;
   margin-left: 10px;
   font-size: 15px;
+}
+.top ::-moz-placeholder {
+  text-align: left;
+  text-transform: uppercase;
 }
 .top ::placeholder {
   text-align: left;
@@ -143,6 +152,7 @@ body hr {
     flex-direction: column-reverse !important;
   }
   .top .order {
+    height: -moz-fit-content;
     height: fit-content;
   }
 }
@@ -181,6 +191,7 @@ body hr {
 .middle .desc {
   padding: 1rem;
   height: 80px;
+  width: -moz-fit-content;
   width: fit-content;
   min-width: 345px;
   gap: 20px;
@@ -216,6 +227,11 @@ body hr {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   background: transparent;
   outline: none;
+}
+.middle ::-moz-placeholder {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 .middle ::placeholder {
   font-size: 1rem;
@@ -270,6 +286,9 @@ body hr {
   height: 45px;
 }
 .charges label {
+  text-align: center;
+}
+.charges ::-moz-placeholder {
   text-align: center;
 }
 .charges ::placeholder {

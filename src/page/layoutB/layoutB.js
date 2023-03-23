@@ -1,17 +1,22 @@
 import "../../style/styleB/style.css";
 import Header from "../../components/header/header";
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useAxios from "../../utils/useAxios";
+import dayjs from "dayjs";
+
 const LayoutB = () => {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const customAxios = useAxios();
-  const [goldrate, setGoldrate] = useState(0);
-  const [silverrate, setSilverrate] = useState(0);
-  const [making, setMaking] = useState(0);
-  const user = {
-    user_id: 1,
-  };
+
+  //basic info related
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [dob, setDob] = useState(null);
+  const [doa, setDoa] = useState(null);
+  const [doo, setDoo] = useState(dayjs().format("YYYY-MM-DD"));
+  const [billno, setBillno] = useState("");
   //Item related
 
   const [rows, setRows] = useState([
@@ -60,82 +65,81 @@ const LayoutB = () => {
     const newRows = [...rows];
     newRows[index].ntwt = value;
     if (newRows[index].type === "Gold") {
-      newRows[index].amt = value * goldrate;
+      newRows[index].amt = value * 0;
     } else if (newRows[index].type === "Silver") {
-      newRows[index].amt = value * silverrate;
+      newRows[index].amt = value * 0;
     } else {
       alert("!Please select type before changing net quantity!");
-      newRows[index].ntwt = 0;
+      newRows[index].ntwt = "";
     }
 
     setRows(newRows);
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   let temp_row = [];
+    let temp_row = [];
 
-  //   for (let i = 0; i < rows.length; i++) {
-  //     temp_row.push({
-  //       bill: null,
-  //       owner: user.user_id,
-  //       item_name: rows[i].desc,
-  //       item_type: rows[i].type,
-  //       net_wt: rows[i].ntwt,
-  //       gross_wt: rows[i].grosswt,
-  //       price: rows[i].amt,
-  //     });
-  //   }
+    for (let i = 0; i < rows.length; i++) {
+      temp_row.push({
+        bill: null,
+        owner: user.user_id,
+        item_name: rows[i].desc,
+        item_type: rows[i].type,
+        net_wt: rows[i].ntwt,
+        gross_wt: rows[i].grosswt,
+        price: rows[i].amt,
+      });
+    }
 
-  //   const res = await customAxios
-  //     .post("/bill/post", {
-  //       items: temp_row,
-  //       bill_no: "",
-  //       doo: dayjs().format("YYYY-MM-DD"),
-  //       purity: purity,
-  //       name: name,
-  //       phone_no: phone,
-  //       address: address,
-  //       dob: dob,
-  //       doa: doa,
-  //       other_name: otherchargename,
-  //       other_price: otherchargeprice,
-  //       gold_value: goldvalue,
-  //       gold_rate: goldrate,
-  //       silver_value: silvervalue,
-  //       silver_rate: silverrate,
-  //       processing_charges: processing,
-  //       gst: gst,
-  //       hallmark: hallmark,
-  //       net_amount: amount,
-  //       owner: user.user_id,
-  //     })
-  //     .catch((err) => {
-  //       alert("!Something Went Wrong!");
-  //     });
+    const res = await customAxios
+      .post("/bill/post", {
+        items: temp_row,
+        bill_no: billno,
+        doo: doo,
+        invoice_date: null,
+        purity: null,
+        name: name,
+        phone_no: phone,
+        address: address,
+        dob: dob,
+        doa: doa,
+        other_name: null,
+        other_price: 0,
+        gold_value: 0,
+        gold_rate: 0,
+        silver_value: 0,
+        silver_rate: 0,
+        processing_charges: 0,
+        gst: 0,
+        hallmark: 0,
+        net_amount: 0,
+        old_gold_wt: oldgold,
+        old_silver_wt: oldsilver,
+        advance: advanced,
+        refund: 0,
+        sold: false,
+        owner: user.user_id,
+      })
+      .catch((err) => {
+        alert("!Something Went Wrong!");
+      });
 
-  //   if (res.status === 201) {
-  //     window.location.reload(false);
-  //   }
-  // };
+    if (res.status === 201) {
+      window.location.reload(false);
+    }
+  };
 
   //Calculation Related
 
-  const [totalgold, setTotalgold] = useState(0);
-  const [totalsilver, setTotalsilver] = useState(0);
-  const [goldvalue, setGoldvalue] = useState(0);
-  const [silvervalue, setSilvervalue] = useState(0);
-  const [processing, setProcessing] = useState(0);
-  const [hallmark, setHallmark] = useState(0);
-  const [otherchargename, setOtherchargename] = useState("");
-  const [otherchargeprice, setOtherchargeprice] = useState(0);
-  const [gst, setGst] = useState(0);
-  const [amount, setAmount] = useState(0);
+  const [oldgold, setOldgold] = useState(0);
+  const [oldsilver, setOldsilver] = useState(0);
+  const [advanced, setAdvanced] = useState(0);
 
   return (
     <div className="order">
-      <Header />
+      <Header text={"Order Page"} />
       <hr></hr>
 
       <section>
@@ -143,7 +147,11 @@ const LayoutB = () => {
           <div className="name">
             <div className="row">
               <label>Name : </label>
-              <input type="text" placeholder="Name" />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
 
             <div className="row">
@@ -153,32 +161,55 @@ const LayoutB = () => {
                 name="Address"
                 rows="4"
                 cols="35"
-                placeholder="Address"
-              ></textarea>
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
             </div>
 
             <div className="row">
-              <label>Phone : </label>
-              <input type="number" placeholder="Phone" />
+              <label>Phone No: </label>
+              <input
+                type="number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
 
             <div className="row">
               <label>DOB : </label>
-              <input type="date" placeholder="DOB" />
+              <input
+                type="date"
+                max={dayjs().format("YYYY-MM-DD")}
+                value={dob}
+                onChange={(e) => setDob(e.target.value)}
+              />
             </div>
 
             <div className="row">
               <label>DOA:</label>
-              <input type="date" placeholder="DOA" />
+              <input
+                type="date"
+                max={dayjs().format("YYYY-MM-DD")}
+                value={doa}
+                onChange={(e) => setDoa(e.target.value)}
+              />
             </div>
           </div>
 
           <div className="order">
             <label>Order No. : </label>
-            <input type="text" placeholder="Purity" />
+            <input
+              type="text"
+              value={billno}
+              onChange={(e) => setBillno(e.target.value)}
+            />
 
             <label>Order Date : </label>
-            <input type="date" placeholder="Order Date" />
+            <input
+              type="date"
+              value={doo}
+              onChange={(e) => setDoo(e.target.value)}
+            />
           </div>
         </div>
       </section>
@@ -254,7 +285,7 @@ const LayoutB = () => {
           </button>
         </div>
 
-        <div className="charges">
+        {/* <div className="charges">
           <input
             placeholder="OTHER CHARGES"
             value={otherchargename}
@@ -264,48 +295,49 @@ const LayoutB = () => {
             value={otherchargeprice}
             onChange={(e) => setOtherchargeprice(e.target.value)}
           />
-        </div>
-        <div className="charges">
-          <label>HallMark Charge</label>
-          <input
-            value={hallmark}
-            onChange={(e) => setHallmark(e.target.value)}
-          />
-        </div>
-        <div className="charges">
-          <label>Processing Charge</label>
-          <input value={making} onChange={(e) => setMaking(e.target.value)} />
-        </div>
-        <div className="middle-btn">
-          <button>CALCULATE</button>
-        </div>
+        </div> */}
       </section>
 
-      <hr></hr>
+      <hr />
 
       <section>
         <div className="bottom">
           <div className="payment">
             <div className="old_gold_wt">
               <p>OLD GOLD WT. :</p>
-              <input placeholder="NIL"></input>
+              <input
+                type="number"
+                step="0.01"
+                value={oldgold}
+                onChange={(e) => setOldgold(e.target.value)}
+              />
+            </div>
+
+            <div className="old_silver_wt">
+              <p>OLD SILVER WT. :</p>
+              <input
+                type="number"
+                step="0.01"
+                value={oldsilver}
+                onChange={(e) => setOldsilver(e.target.value)}
+              />
             </div>
 
             <div className="advance">
               <p>ADVANCE :</p>
-              <input placeholder="NIL"></input>
-            </div>
-
-            <div className="refund">
-              <p>REFUND :</p>
-              <input placeholder="NIL"></input>
+              <input
+                type="number"
+                step="0.01"
+                value={advanced}
+                onChange={(e) => setAdvanced(e.target.value)}
+              />
             </div>
           </div>
         </div>
       </section>
 
       <div className="submit-btn">
-        <button>SUBMIT</button>
+        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
       </div>
 
       <hr></hr>

@@ -61,6 +61,8 @@ body {
 .Login .password {
   width: 100%;
   margin: 50px 0;
+  display: flex;
+  align-items: center;
 }
 .Login .username input,
 .Login .password input {

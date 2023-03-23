@@ -51,6 +51,7 @@ body hr {
 }
 
 .order .top {
+  height: -moz-fit-content;
   height: fit-content;
   padding: 0.5rem 2rem;
   display: grid;
@@ -80,9 +81,9 @@ body hr {
 }
 .order .top .row label {
   text-transform: uppercase;
-  font-weight: 800;
 }
 .order .top h1 {
+  width: -moz-fit-content;
   width: fit-content;
   padding-left: 1rem;
 }
@@ -99,6 +100,10 @@ body hr {
   padding: 20px;
   margin-left: 10px;
   font-size: 15px;
+}
+.order .top ::-moz-placeholder {
+  text-align: left;
+  text-transform: uppercase;
 }
 .order .top ::placeholder {
   text-align: left;
@@ -136,6 +141,7 @@ body hr {
     flex-direction: column-reverse !important;
   }
   .order .top .order {
+    height: -moz-fit-content;
     height: fit-content;
   }
 }
@@ -175,6 +181,7 @@ body hr {
 .order .middle .desc {
   padding: 1rem;
   height: 80px;
+  width: -moz-fit-content;
   width: fit-content;
   min-width: 345px;
   gap: 20px;
@@ -209,6 +216,11 @@ body hr {
   border: 1px solid var(--clr-background3);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   background: transparent;
+}
+.order .middle ::-moz-placeholder {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 .order .middle ::placeholder {
   font-size: 1rem;
@@ -256,6 +268,9 @@ body hr {
   background: transparent;
   text-align: center;
 }
+.order .charges ::-moz-placeholder {
+  text-align: center;
+}
 .order .charges ::placeholder {
   text-align: center;
 }
@@ -301,7 +316,7 @@ body hr {
 }
 .bottom .old_gold_wt,
 .bottom .advance,
-.bottom .refund {
+.bottom .old_silver_wt {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -309,7 +324,7 @@ body hr {
 @media (max-width: 1000px) {
   .bottom .old_gold_wt,
   .bottom .advance,
-  .bottom .refund {
+  .bottom .old_silver_wt {
     flex-direction: column;
   }
 }

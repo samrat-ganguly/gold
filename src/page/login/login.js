@@ -23,7 +23,7 @@ const Login = () => {
           <h1>LOGIN</h1>
 
           <div className="username">
-            <label>USERNAME : </label>
+            <label>USERNAME: </label>
             <input
               type="text"
               value={username}
@@ -32,7 +32,7 @@ const Login = () => {
           </div>
 
           <div className="password">
-            <label>PASSWORD : </label>
+            <label>PASSWORD: </label>
             <input
               type="password"
               value={password}

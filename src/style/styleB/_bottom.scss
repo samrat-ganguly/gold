@@ -28,16 +28,17 @@
 
   .old_gold_wt,
   .advance,
-  .refund {
+  .old_silver_wt {
     display: flex;
     align-items: center;
     gap: 20px;
   }
 
   @media (max-width: 1000px) {
+
     .old_gold_wt,
     .advance,
-    .refund {
+    .old_silver_wt {
       flex-direction: column;
     }
   }
